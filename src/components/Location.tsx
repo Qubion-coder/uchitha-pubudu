@@ -10,23 +10,15 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
   const venues = [
     {
       id: 'ceremony',
-      name: "St. Mary's Church",
-      city: "Negombo",
-      quote: `"A beautiful and sacred place where we will unite in holy matrimony."`,
-      liveLocationUrl: "https://maps.app.goo.gl/kPtBACZFd3AcKa1u9",
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Negombo%2C_St._Mary%27s_Church%2C_2025-07_CN-02.jpg",
-      label: "The Ceremony"
-    },
-    {
-      id: 'reception',
-      name: "Centrium Ballroom, Avenra Gardens",
-      city: "Negombo",
-      quote: `"A serene and elegant setting where we will celebrate our wedding function with joy and laughter."`,
-      liveLocationUrl: "https://maps.app.goo.gl/3HPomRVMHdbHUbo86",
-      imageUrl: "https://www.aha.lk/img/projects/1%20%281%291565002653.jpg",
-      label: "The Reception"
+      name: "Hotel Green Court",
+      city: "Jaya mawatha, Homagama",
+      quote: `"A beautiful and serene place where we will unite in holy matrimony and celebrate our love."`,
+      liveLocationUrl: "https://maps.app.goo.gl/T1N5xvpyokCvE6t56",
+      imageUrl: "https://hotel-green-court.srilankahotel.net/data/Photos/700x500w/7571/757150/757150681.JPEG",
+      label: "The Wedding Celebration"
     }
   ];
+
 
   return (
     <div className="max-w-[85rem] mx-auto px-6 relative pt-12 pb-0 lg:py-12">

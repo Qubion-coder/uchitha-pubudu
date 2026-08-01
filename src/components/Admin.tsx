@@ -39,18 +39,13 @@ export const Admin: React.FC = () => {
   };
 
   const generateFullMessage = (url: string, title: string, name: string) => {
-    return `Dear ${title ? title + ' ' : ''}${name} ❤️
+    return `Dear ${title ? title + ' ' : ''}${name},
 
-With joyful hearts, we warmly invite you to celebrate one of the most special days of our lives as we begin our journey together.
-
-Please view our wedding invitation and all the event details through the link below 🌐:
+We joyfully invite you to celebrate our wedding. Please tap the link below for event details and to RSVP.
 
 ${url}
 
-Your presence would truly mean the world to us, and we would be honored to celebrate this beautiful moment together.
-
-With love,
-❤️ Teshan & Apsara`;
+❤️ Pubudu & Uchitha`;
   };
 
   const handleCopyMessageActive = () => {
