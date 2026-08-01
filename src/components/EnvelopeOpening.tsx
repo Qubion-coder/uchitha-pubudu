@@ -464,8 +464,8 @@ export function EnvelopeOpening({
               <div className="text-details">
                 Request the honour of your presence<br />
                 to celebrate their marriage at<br />
-                <span className="text-church">Centrium Ballroom, Avenra Gardens</span><br />
-                Negombo
+                <span className="text-church">Hotel Green Court</span><br />
+                Jaya mawatha, Homagama
               </div>
             </div>
           </div>
