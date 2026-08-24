@@ -450,7 +450,7 @@ export function EnvelopeOpening({
               </div>
 
               <h1 className="text-names">
-                Uchitha
+                Kusheli
                 <span className="text-[#C9A96E] font-normal mx-2 sm:mx-6 text-[3rem] sm:text-[4rem] inline-block -translate-y-2 drop-shadow-sm">&</span>
                 Pubudu
               </h1>

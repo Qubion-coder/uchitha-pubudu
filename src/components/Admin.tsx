@@ -45,7 +45,7 @@ We joyfully invite you to celebrate our wedding. Please tap the link below for e
 
 ${url}
 
-❤️ Pubudu & Uchitha`;
+❤️ Pubudu & Kusheli`;
   };
 
   const handleCopyMessageActive = () => {

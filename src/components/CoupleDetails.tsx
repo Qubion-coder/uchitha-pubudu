@@ -21,7 +21,7 @@ export const CoupleDetails: React.FC = () => {
             <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-brand-plum/60" />
           </div>
           <h2 className="text-5xl sm:text-7xl font-names text-stone-800 tracking-tight drop-shadow-sm">
-            Uchitha <span className="text-brand-plum font-light mx-2">&</span> Pubudu
+            Kusheli <span className="text-brand-plum font-light mx-2">&</span> Pubudu
           </h2>
         </motion.div>
       </div>
@@ -59,7 +59,7 @@ export const CoupleDetails: React.FC = () => {
         >
           <div className="mb-4 flex flex-col items-center lg:items-start">
             <span className="text-brand-plum uppercase tracking-[0.4em] text-[10px] font-bold mb-3 block">The Bride</span>
-            <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-2 drop-shadow-sm">Uchitha</h3>
+            <h3 className="text-4xl sm:text-5xl font-names text-stone-800 mb-2 drop-shadow-sm">Kusheli</h3>
             <p className="text-stone-700 font-century text-xs mb-2">Binaragamage Don Uchitha Kusheli Charindani</p>
             <p className="text-stone-500/90 font-serif italic text-base sm:text-lg">Daughter of Mr. Binaragamage Don Upananda <br/> & Mrs. Amugoda Kankanamge Chandani Kusumlatha</p>
           </div>
