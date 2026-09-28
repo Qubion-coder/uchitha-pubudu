@@ -65,6 +65,7 @@ export const IntroSequence: React.FC<IntroSequenceProps> = ({
               ref={videoRef}
               src="/intro_video.mp4"
               autoPlay
+              muted
               playsInline
               onEnded={handleVideoEnded}
               className="w-full h-full object-cover max-w-full max-h-full"
