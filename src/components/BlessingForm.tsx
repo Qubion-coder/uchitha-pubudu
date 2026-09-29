@@ -12,13 +12,13 @@ interface BlessingData {
 export function BlessingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, reset, formState: { errors } } = useForm<BlessingData>();
-  const scriptUrl = "";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbyw10hPJYsqnUD1FPq9rLmM6k-CxfFxvoVbj_JVLLqna0QYZiy58LhAHYA8rbDryCTa/exec";
 
   const onSubmit = async (data: BlessingData) => {
     setIsSubmitting(true);
 
     try {
-      const payload = new FormData();
+      const payload = new URLSearchParams();
       payload.append('sheet', 'WISH');
       payload.append('name', data.name);
       payload.append('message', data.message);

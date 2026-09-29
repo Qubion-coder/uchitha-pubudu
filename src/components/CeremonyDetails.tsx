@@ -67,7 +67,7 @@ export const CeremonyDetails: React.FC<CeremonyDetailsProps> = ({ event = 'both'
                       <span className="font-semibold text-stone-700">Time:</span> 09.00 AM - 03.00 PM
                     </p>
                     <p className="leading-relaxed">
-                      <span className="font-semibold text-stone-700">Venue:</span> Hotel Green Court,<br className="hidden sm:block" /> Jaya mawatha, Homagama
+                      <span className="font-semibold text-stone-700">Venue:</span> Hotel Green Court,<br className="hidden sm:block" /> No:6, Pinketha Road, Galawilawatta, Homagama
                     </p>
                   </div>
                 </div>

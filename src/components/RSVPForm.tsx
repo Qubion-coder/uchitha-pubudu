@@ -13,10 +13,9 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
   const [formData, setFormData] = useState({
     fullName: inviteeName,
     guests: '1',
-    dietaryNotes: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const scriptUrl = "";
+  const scriptUrl = "https://script.google.com/macros/s/AKfycbyw10hPJYsqnUD1FPq9rLmM6k-CxfFxvoVbj_JVLLqna0QYZiy58LhAHYA8rbDryCTa/exec";
 
   useEffect(() => {
     if (inviteeName) {
@@ -24,18 +23,20 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
     }
   }, [inviteeName]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const submitRSVP = async (attendance: string) => {
+    if (!formData.fullName) {
+      toast.error('Please enter your name.');
+      return;
+    }
+
     setStatus('loading');
 
     try {
-
-      const payload = new FormData();
+      const payload = new URLSearchParams();
       payload.append('sheet', 'RSVP');
       payload.append('fullName', formData.fullName);
       payload.append('guests', formData.guests);
-      payload.append('dietaryNotes', formData.dietaryNotes);
-      payload.append('event', eventParam);
+      payload.append('attendance', attendance);
 
       await fetch(scriptUrl, {
         method: 'POST',
@@ -45,7 +46,7 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
 
       setStatus('success');
       toast.success('Your RSVP has been warmly received!');
-      setFormData({ fullName: inviteeName, guests: '1', dietaryNotes: '' });
+      setFormData({ fullName: inviteeName, guests: '1' });
     } catch (error) {
       console.error('Error sending RSVP: ', error);
       setStatus('error');
@@ -126,7 +127,7 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                onSubmit={handleSubmit}
+                onSubmit={(e) => e.preventDefault()}
                 className="space-y-6 bg-white/40 p-8 sm:p-10 rounded-[2.5rem] border border-white shadow-[0_15px_30px_rgba(0,0,0,0.05)]"
               >
                 <div>
@@ -160,27 +161,26 @@ export const RSVPForm: React.FC<RSVPFormProps> = ({ inviteeName = '', eventName 
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-[10px] uppercase tracking-[0.2em] font-bold text-stone-500 mb-3 ml-2">Dietary Notes (Optional)</label>
-                  <textarea
-                    placeholder="We'd love to know if you have any allergies..."
-                    className="w-full bg-white/80 px-6 py-4 rounded-[2rem] border border-stone-200/60 focus:ring-2 focus:ring-brand-lavender/30 focus:border-brand-plum/40 outline-none transition-all duration-300 h-28 resize-none font-serif italic text-lg shadow-inner placeholder:text-stone-300"
-                    value={formData.dietaryNotes}
-                    onChange={(e) => setFormData({ ...formData, dietaryNotes: e.target.value })}
-                  />
-                </div>
-
-                <div className="pt-4">
+                <div className="pt-4 flex flex-col sm:flex-row gap-4">
                   <button
                     disabled={status === 'loading'}
-                    type="submit"
-                    className="w-full bg-stone-800 text-brand-rose py-5 rounded-full font-sans tracking-[0.3em] font-bold text-[11px] uppercase hover:bg-stone-900 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-70"
+                    type="button"
+                    onClick={() => submitRSVP('Accept')}
+                    className="w-full flex-1 bg-stone-800 text-brand-rose py-4 rounded-full font-sans tracking-[0.2em] font-bold text-[11px] uppercase hover:bg-stone-900 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.25)] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70"
                   >
                     {status === 'loading' ? (
                       <Loader2 className="w-5 h-5 animate-spin" />
                     ) : (
-                      'Confirm Attendance'
+                      'Accept'
                     )}
+                  </button>
+                  <button
+                    disabled={status === 'loading'}
+                    type="button"
+                    onClick={() => submitRSVP('Decline')}
+                    className="w-full flex-1 bg-white/60 text-stone-600 py-4 rounded-full border border-stone-300 font-sans tracking-[0.2em] font-bold text-[11px] uppercase hover:bg-white transition-all duration-300 shadow-[0_5px_15px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)] active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70"
+                  >
+                    Decline
                   </button>
                 </div>
               </motion.form>

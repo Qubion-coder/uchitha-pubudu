@@ -11,7 +11,7 @@ export const Location: React.FC<LocationProps> = ({ event = 'both' }) => {
     {
       id: 'ceremony',
       name: "Hotel Green Court",
-      city: "Jaya mawatha, Homagama",
+      city: "No:6, Pinketha Road, Galawilawatta, Homagama",
       quote: `"A beautiful and serene place where we will unite in holy matrimony and celebrate our love."`,
       liveLocationUrl: "https://maps.app.goo.gl/T1N5xvpyokCvE6t56",
       imageUrl: "https://hotel-green-court.srilankahotel.net/data/Photos/700x500w/7571/757150/757150681.JPEG",

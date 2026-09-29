@@ -121,9 +121,13 @@ export function InvitationContent({
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-brand-lavender/10 blur-[80px] rounded-full pointer-events-none" />
           <Heart className="w-6 h-6 mx-auto mb-6 text-brand-plum fill-brand-lavender/20" />
           <p className="font-names text-4xl sm:text-5xl text-stone-800 mb-2">Kusheli & Pubudu</p>
-          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-sans text-stone-400 font-semibold block mb-8">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.4em] font-sans text-stone-400 font-semibold block mb-4">
             October 23, 2026
           </span>
+          <p className="text-brand-plum/60 text-[10px] sm:text-xs mt-2 font-sans tracking-wider">
+            Want a beautiful wedding website like this? Create yours with{' '}
+            <a target="_blank" rel="noreferrer" className="text-stone-700 hover:text-brand-plum underline underline-offset-2 transition-colors duration-300 font-semibold" href="https://wa.me/94707819074">invitemint</a>
+          </p>
         </footer>
       </DeferredMount>
     </motion.div>

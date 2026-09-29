@@ -465,7 +465,7 @@ export function EnvelopeOpening({
                 Request the honour of your presence<br />
                 to celebrate their marriage at<br />
                 <span className="text-church">Hotel Green Court</span><br />
-                Jaya mawatha, Homagama
+                No:6, Pinketha Road, Galawilawatta, Homagama
               </div>
             </div>
           </div>
